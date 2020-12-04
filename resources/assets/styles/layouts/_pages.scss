@@ -1,0 +1,32 @@
+.product {
+    position: relative;
+    margin: 5px;
+    width: 190px;
+    &-content {
+        transition: all 0.2s;
+    }
+    &-title span {
+        color: rgba(0, 0, 0, 0.8);
+        height: 50px;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+    }
+    &-same {
+        //@include position($type: absolute, $left: 0, $index: -1);
+        display: none;
+    }
+}
+
+.product:hover {
+    .product-content {
+        transform: scale(1.01);
+    }
+    .product-same {
+        z-index: 10;
+        opacity: 1;
+        display: block;
+    }
+}

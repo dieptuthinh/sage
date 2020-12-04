@@ -1,0 +1,31 @@
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.link-white {
+    color: $white;
+    &:hover {
+        color: $gray-400;
+    }
+}
+
+.bg-img {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.ct {
+    background-color: bisque;
+    // margin: 5px;
+    // padding: 10px;
+}
+
+.ct img {
+    width: 600px;
+    height: 500px;
+}
