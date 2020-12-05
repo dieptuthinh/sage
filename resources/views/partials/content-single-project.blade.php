@@ -5,7 +5,8 @@
   </header>
   <div class="entry-content">
     {{get_field('name')}}
-
+    {{dd(get_post_type)}}
+    aaaaaaaaaaaaaaaaaaa
   </div>
 
 

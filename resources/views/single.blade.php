@@ -2,9 +2,9 @@
 
 @section('content')
   @while(have_posts()) @php the_post() @endphp
-  <div>{{the_title() }}</div>
-  {{get_field('name')}}
+  <!-- <div>{{the_title() }}</div>
+  {{get_field('name')}} -->
 
-  @include('partials.content-single-'.get_post_type())
+  @include('partials.content-single-project'.get_post_type())
   @endwhile
 @endsection

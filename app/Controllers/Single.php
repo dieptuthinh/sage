@@ -7,69 +7,40 @@ use WP_Query;
 
 class Single extends Controller
 {
-  // protected $productId;
-  // protected $product;
+  public function project()
+  {
+      return (object)[
+        'name' => get_field('name',get_the_ID()),
+        'url' => get_field('url',get_the_ID()),
+        'case_study' => get_field('case_study',get_the_ID()),
+        'delivery_solution' => get_field('delivery_solution',get_the_ID()),
+        'feedback' => get_field('feedback',get_the_ID()),
+        'img' => $this->getImage(get_the_ID(),'large'),
+      ];
+  }
 
-  // public function __before() {
-  //   $this->productId = get_field('id');
-  //   $this->product = (new WP_Query([
-  //     'post_type' => 'product',
-  //     'meta_key' => 'id',
-  //     'meta_value' => $this->productId
-  //   ]))->post;
-  // }
+  protected function getImage($id,$size = 'medium')
+  {
+    $image = get_field('project_image',$id);
 
-  // public function product() {
-  //   $pro = clone $this->product;
-  //   $pro->image = get_post($pro->image)->guid;
+    $url = $image['url'];
+    $title = $image['title'];
+    $alt = $image['alt'];
+    $caption = $image['caption'];
 
-  //   $pro->brand = get_term((int)$pro->brand[0])->name;
+    
+    $thumb = $image['sizes'][$size];
+    $width = $image['sizes'][$size. '-width'];
+    $height = $image['sizes'][$size. '-height'];
 
-  //   $pro->material = get_term((int)$pro->material[0])->name;
-
-  //   $pro->groupName = get_term((int)$pro->group[0])->name;
-  //   $pro->groupLink = get_term_link((int)$pro->group[0]);
-
-  //   return $pro;
-  // }
-
-  // public function sameProducts() {
-  //   $pro = clone $this->product;
-
-  //   $same = new WP_Query([
-  //     'post_type' => 'product',
-  //     'orderby' => 'post_date',
-  //     'order'   => 'DESC',
-  //     'posts_per_page' => 4,
-  //     'meta_query'	=> array(
-  //       'relation'		=> 'AND',
-  //       array(
-  //         'key'		=> 'id',
-  //         'value'		=> $pro->id,
-  //         'compare'	=> '!='
-  //       ),
-  //       array(
-  //         'key'		=> 'group',
-  //         'value'		=> $pro->group,
-  //         'compare'	=> 'IN'
-  //       ),
-  //       array(
-  //         'key'		=> 'brand',
-  //         'value'		=> $pro->brand,
-  //         'compare'	=> 'IN'
-  //       ),
-  //       array(
-  //         'key'		=> 'material',
-  //         'value'		=> $pro->material,
-  //         'compare'	=> 'IN'
-  //       )
-  //     )
-  //   ]);
-
-  //   return array_map(function($pro) {
-  //     $pro->image = get_post($pro->image)->guid;
-  //     return $pro;
-  //   }, $same->posts);
-  // }
-
+    return (object)[
+      'url' => $url,
+      'title' => $title,
+      'alt' => $alt,
+      'caption' => $caption,
+      'thumb' => $thumb,
+      'width' => $width,
+      'height' => $height,
+    ];
+  }
 }
