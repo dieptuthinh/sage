@@ -1,3 +1,4 @@
+<!-- về cơ bản chỉ là một cấu trúc HTML tổng thể cho mỗi trang. -->
 <!doctype html>
 <html {!! get_language_attributes() !!}>
   @include('partials.head')

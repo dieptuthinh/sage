@@ -20,24 +20,24 @@ class FrontPage extends Controller
     }, $query->posts);
   }
 
-  public function sliders() {
-    return [
-      [
-        'link' => '#',
-        'image' => get_template_directory_uri(  ) . '/assets/images/banner2.jpg'
-      ],
-      [
-        'link' => '#',
-        'image' => get_template_directory_uri(  ) . '/assets/images/banner3.jpg'
-      ],
-      [
-        'link' => '#',
-        'image' => get_template_directory_uri(  ) . '/assets/images/banner4.jpg'
-      ],
-      [
-        'link' => '#',
-        'image' => get_template_directory_uri(  ) . '/assets/images/banner5.jpg'
-      ]
-    ];
-  }
+  // public function sliders() {
+  //   return [
+  //     [
+  //       'link' => '#',
+  //       'image' => get_template_directory_uri(  ) . '/assets/images/banner2.jpg'
+  //     ],
+  //     [
+  //       'link' => '#',
+  //       'image' => get_template_directory_uri(  ) . '/assets/images/banner3.jpg'
+  //     ],
+  //     [
+  //       'link' => '#',
+  //       'image' => get_template_directory_uri(  ) . '/assets/images/banner4.jpg'
+  //     ],
+  //     [
+  //       'link' => '#',
+  //       'image' => get_template_directory_uri(  ) . '/assets/images/banner5.jpg'
+  //     ]
+  //   ];
+  // }
 }
